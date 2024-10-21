@@ -4,7 +4,6 @@ import com.post.service.model.PostOffice;
 import com.post.service.repository.PostOfficeRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,12 +12,6 @@ public class PostOfficeImpl implements PostOfficeService{
 
     private final PostOfficeRepository postOfficeRepository;
 
-    private List<PostOffice> postOfficeList = new ArrayList<>();
-    {
-        for (int i = 0; i < 100; i++) {
-            postOfficeList.add(new PostOffice(i, i*10, "Street " + i, i*2, "City" + i));
-        }
-    }
 
     public PostOfficeImpl(PostOfficeRepository postOfficeRepository) {
         this.postOfficeRepository = postOfficeRepository;
@@ -31,8 +24,7 @@ public class PostOfficeImpl implements PostOfficeService{
 
     @Override
     public List<PostOffice> findAllPostOffices() {
-        return postOfficeList;
-//        return postOfficeRepository.findAll();
+        return postOfficeRepository.findAll();
     }
 
     @Override

@@ -21,5 +21,4 @@ public class PostOffice {
     private String streetName;
     private int streetNumber;
     private String city;
-
 }
